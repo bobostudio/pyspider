@@ -8,7 +8,8 @@ def get_image():
     res = requests.get(url)
     # print(requests.get(url=url).url)
     name = res.url.split('/')[4]
-    with open('./data/{name}'.format(name=name), 'wb') as f:
+    with open('./katong/{name}'.format(name=name), 'wb') as f:
+        print('下载 {name}'.format(name=name)+' 中')
         f.write(res.content)
 
 

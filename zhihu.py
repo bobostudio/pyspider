@@ -34,13 +34,13 @@ def parse(res):
             if "thumbnails" in v["target"]:
                 for thumbnail in v["target"]["thumbnails"]:
                     r = requests.get(thumbnail)
-                    with open('./images/{name}'.format(name=thumbnail.split('/')[-1]), 'wb') as f:
+                    with open('./zhihu/{name}'.format(name=thumbnail.split('/')[-1]), 'wb') as f:
                         print('写入图片,{name}'.format(
                             name=thumbnail.split('/')[-1]))
                         f.write(r.content)
             if "thumbnail" in v["target"]:
                 r = requests.get(v["target"]["thumbnail"])
-                with open('./images/{name}'.format(name=v["target"]["thumbnail"].split('/')[-1]), 'wb') as f:
+                with open('./zhihu/{name}'.format(name=v["target"]["thumbnail"].split('/')[-1]), 'wb') as f:
                     print('写入图片,{name}'.format(
                         name=v["target"]["thumbnail"].split('/')[-1]))
                     f.write(r.content)
